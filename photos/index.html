@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sandlin.nyc — Photos</title>
+    <meta name="description" content="Photos by Hunter" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <body>
+    <div class="center">
+      <h1 class="logo">sandlin.nyc</h1>
+      <p class="tagline">Hunter's personal website</p>
+    </div>
+
+    <div class="back-nav">
+      <a class="back-link" href="/"
+        ><span class="arrow">&larr;</span>Back to homepage</a
+      >
+    </div>
+
+    <h2 class="center">Photos</h2>
+    <p class="big center">
+      A running collection of photos, mostly just things I noticed while out and
+      about.
+    </p>
+
+    <div class="gold-divider"></div>
+
+    <div class="photo-grid" id="photoGrid">
+      <!-- posts are rendered by gallery.js below -->
+    </div>
+
+    <div class="foot">sandlin.nyc &middot; email me @ hunter@sandlin.nyc</div>
+
+    <!-- lightbox -->
+    <div class="lightbox" id="lightbox">
+      <div class="lightbox-content">
+        <button class="lb-close" id="lbClose" aria-label="Close">
+          &times;
+        </button>
+        <p class="lb-counter" id="lbCounter"></p>
+        <div class="lb-image-wrap">
+          <button
+            class="lb-arrow lb-prev"
+            id="lbPrev"
+            aria-label="Previous photo"
+          >
+            &#10094;
+          </button>
+          <img class="lb-image" id="lbImage" src="" alt="" />
+          <button class="lb-arrow lb-next" id="lbNext" aria-label="Next photo">
+            &#10095;
+          </button>
+        </div>
+        <p class="lb-caption" id="lbCaption"></p>
+      </div>
+    </div>
+
+    <script src="/assets/js/gallery.js"></script>
+  </body>
+</html>

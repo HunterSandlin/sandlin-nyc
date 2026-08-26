@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SandlinNYC &mdash; Books</title>
+    <meta name="description" content="Books reviews by Hunter" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <body>
+    <div class="center">
+      <h1 class="logo">sandlin.nyc</h1>
+      <p class="tagline">Hunter's personal website</p>
+    </div>
+
+    <div class="back-nav">
+      <a class="back-link" href="/"
+        ><span class="arrow">&larr;</span>Back to homepage</a
+      >
+    </div>
+
+    <h2 class="center">Books</h2>
+    <p class="big center">
+      Books I've read, roughly newest to oldest, with whatever I wrote about
+      them at the time.
+    </p>
+
+    <div class="gold-divider"></div>
+
+    <div class="book-grid" id="bookGrid"></div>
+
+    <div class="foot">sandlin.nyc &middot; email me @ hunter@sandlin.nyc</div>
+
+    <div class="lightbox" id="lightbox">
+      <div class="lightbox-content">
+        <button class="lb-close" id="lbClose" aria-label="Close">
+          &times;
+        </button>
+        <h3 class="book-title" id="bookTitle"></h3>
+        <p class="book-meta" id="bookMeta"></p>
+        <div class="book-review" id="bookReview"></div>
+      </div>
+    </div>
+
+    <script src="/assets/js/books.js"></script>
+  </body>
+</html>

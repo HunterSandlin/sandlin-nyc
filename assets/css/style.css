@@ -1,0 +1,409 @@
+/* page background and base text */
+body {
+  background: radial-gradient(
+    ellipse at center,
+    #8ff7f7 0%,
+    #4be6e6 70%,
+    #35cccc 100%
+  );
+  font-family: "Times New Roman", Times, serif;
+  margin: 0;
+  padding: 10px 30px 40px;
+  color: #1e3838;
+}
+
+.center {
+  text-align: center;
+}
+
+/* site wordmark and tagline, used at the top of every page */
+h1.logo {
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 58px;
+  margin: 24px 0 4px;
+  background: linear-gradient(180deg, #fffbe8 0%, #ffd23f 40%, #c98600 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 0 #8a6400)
+    drop-shadow(0 0 16px rgba(255, 255, 255, 0.55));
+}
+
+.tagline {
+  color: #145454;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+/* larger centered intro paragraphs */
+p.big {
+  font-size: 18px;
+  color: #16302f;
+  max-width: 680px;
+  margin: 22px auto;
+  line-height: 1.6;
+}
+
+/* back-to-home link, used on inner pages */
+.back-nav {
+  margin: 4px 0 32px;
+}
+
+.back-link {
+  text-decoration: none;
+}
+
+.back-link .arrow {
+  color: #c98600;
+}
+
+/* grey inset panel, used for the about box and blog post entries */
+.grey-box,
+article {
+  background-color: #eceeee;
+  box-shadow:
+    inset 2px 2px 0 #ffffff,
+    inset -2px -2px 0 #b7bcbc;
+  padding: 18px 22px;
+  max-width: 680px;
+  margin: 26px auto;
+}
+
+.grey-box h2,
+article h3 {
+  margin-top: 0;
+  color: #3d4444;
+}
+
+article h3 {
+  margin-bottom: 2px;
+  font-size: 17px;
+}
+
+article .meta {
+  font-size: 12px;
+  color: #666;
+  margin: 2px 0 8px;
+}
+
+/* gold rule used to separate page sections */
+.gold-divider {
+  height: 6px;
+  max-width: 680px;
+  margin: 34px auto;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #ffd23f 20%,
+    #fff6d5 50%,
+    #ffd23f 80%,
+    transparent
+  );
+  border-radius: 3px;
+}
+
+/* inline link style, used in blog posts and grid squares */
+a.stub {
+  color: #a06c00;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a.stub:hover {
+  text-decoration: underline;
+}
+
+/* three-across info boxes, also used for the site tour links */
+.grid {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  max-width: 680px;
+  margin: 20px auto;
+  flex-wrap: wrap;
+}
+
+.grid div {
+  background: #eceeee;
+  box-shadow:
+    inset 1px 1px 0 #ffffff,
+    inset -1px -1px 0 #b7bcbc;
+  padding: 10px 16px;
+  font-size: 13px;
+  color: #3d4444;
+  text-align: center;
+  flex: 1;
+  min-width: 150px;
+}
+
+.foot {
+  text-align: center;
+  font-size: 12px;
+  color: #145454;
+  margin-top: 40px;
+}
+
+/* photo grid thumbnails */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  max-width: 680px;
+  margin: 24px auto 40px;
+}
+
+.thumb {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  cursor: pointer;
+  background: #d9d9d9;
+  box-shadow:
+    inset 1px 1px 0 #ffffff,
+    inset -1px -1px 0 #b7bcbc;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.thumb:hover img {
+  opacity: 0.85;
+}
+
+/* small stacked-square badge shown on multi-photo posts */
+.thumb .stack-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 14px;
+  height: 14px;
+}
+
+.thumb .stack-badge span {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #fff;
+  border-radius: 1px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.thumb .stack-badge span:first-child {
+  top: 0;
+  left: 2px;
+}
+
+.thumb .stack-badge span:last-child {
+  top: 2px;
+  left: 0;
+}
+
+/* single column of photos on small screens */
+@media (max-width: 480px) {
+  .photo-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+/* photo lightbox overlay */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 30, 30, 0.82);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox-content {
+  background: #eceeee;
+  box-shadow:
+    inset 2px 2px 0 #ffffff,
+    inset -2px -2px 0 #b7bcbc;
+  padding: 18px;
+  max-width: 620px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  text-align: center;
+}
+
+.lb-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  line-height: 1;
+  color: #3d4444;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+}
+
+.lb-close:hover {
+  color: #c98600;
+}
+
+.lb-image-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.lb-image {
+  max-width: 100%;
+  max-height: 60vh;
+  display: block;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.lb-arrow {
+  flex: 0 0 auto;
+  background: linear-gradient(180deg, #ffe27a, #ffd23f 60%, #e0a200);
+  color: #4d3600;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  cursor: pointer;
+  box-shadow:
+    inset 1px 1px 0 rgba(255, 255, 255, 0.6),
+    0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.lb-arrow:hover {
+  background: linear-gradient(180deg, #ffe996, #ffd94f 60%, #e6ab10);
+}
+
+.lb-arrow[disabled] {
+  visibility: hidden;
+}
+
+.lb-caption {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 15px;
+  color: #16302f;
+  margin: 14px 6px 4px;
+}
+
+.lb-counter {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #666;
+  margin: 0;
+}
+
+/* faq page questions and answers */
+.question {
+  font-style: italic;
+  font-size: 18px;
+  color: black;
+  margin: 0;
+}
+
+.answer {
+  padding-bottom: 20px;
+}
+
+/* book grid cards */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  max-width: 680px;
+  margin: 24px auto 40px;
+}
+
+.book-card {
+  background: #eceeee;
+  box-shadow:
+    inset 1px 1px 0 #ffffff,
+    inset -1px -1px 0 #b7bcbc;
+  padding: 12px 14px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-card:hover {
+  box-shadow:
+    inset -1px -1px 0 #ffffff,
+    inset 1px 1px 0 #b7bcbc;
+}
+
+.book-card h3 {
+  font-size: 15px;
+  margin: 0 0 2px;
+  color: #145050;
+}
+
+.book-card .author {
+  font-size: 12px;
+  color: #666;
+  margin: 0 0 6px;
+}
+
+.book-card .stars {
+  color: #ffd23f;
+  text-shadow: 0 1px 0 #c98600;
+  font-size: 13px;
+  margin: 0 0 8px;
+}
+
+.book-card .preview {
+  font-size: 13px;
+  color: #3d4444;
+  line-height: 1.5;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+@media (max-width: 480px) {
+  .book-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* book review modal, reuses the lightbox overlay from the photo gallery */
+.book-title {
+  color: #145050;
+  font-size: 22px;
+  margin: 10px 0 2px;
+}
+
+.book-meta {
+  font-size: 13px;
+  color: #666;
+  margin: 0 0 14px;
+}
+
+.book-review {
+  text-align: left;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #16302f;
+}
