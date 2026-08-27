@@ -1,0 +1,166 @@
+/* Cosmos/ember thematic theme — scoped to .end-of-everything */
+
+body:has(.end-of-everything) {
+  background: linear-gradient(
+    180deg,
+    #2a0f08 0%,
+    #1a0f18 18%,
+    #0e0c1c 40%,
+    #090a16 65%,
+    #050510 100%
+  );
+}
+
+.end-of-everything {
+  position: relative;
+  --ink: #eee8dc;
+  --ink-dim: #a89fc4;
+  --ember: #e08a4f;
+  --star: #9fb2e0;
+  --rule: rgba(159, 178, 224, 0.25);
+
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+/* the back link is left completely alone — no rule below should ever target it */
+
+.end-of-everything ::selection {
+  background: var(--ember);
+  color: #1a0f18;
+}
+
+/* faint starfield, tiled, sits above the gradient */
+.end-of-everything::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-image:
+    radial-gradient(1.5px 1.5px at 15% 20%, #fff, transparent),
+    radial-gradient(1px 1px at 40% 65%, #fff, transparent),
+    radial-gradient(1px 1px at 70% 30%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 85% 75%, #fff, transparent),
+    radial-gradient(1px 1px at 25% 85%, #fff, transparent);
+  background-size: 500px 500px;
+  opacity: 0.5;
+}
+
+.end-of-everything h1 {
+  font-style: italic;
+  font-weight: normal;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  line-height: 1.1;
+  margin: 12px 0 20px;
+  background: linear-gradient(90deg, var(--ember), var(--ink) 60%, var(--star));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.end-of-everything blockquote {
+  position: relative;
+  font-style: italic;
+  font-size: 1.3rem;
+  line-height: 1.55;
+  color: var(--ink);
+  margin: 0 0 40px;
+  padding: 10px 10px 10px 44px;
+}
+.end-of-everything blockquote::before {
+  content: "\201C";
+  position: absolute;
+  left: -6px;
+  top: -30px;
+  font-size: 5rem;
+  color: var(--rule);
+  font-family: Georgia, serif;
+}
+
+/* Part headers — the clear high point of the hierarchy, above the subheadings */
+.end-of-everything h2 {
+  font-weight: bold;
+  font-size: 1.9rem;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  color: var(--ember);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 14px;
+  margin: 64px 0 24px;
+}
+
+/* subheadings like "The King" — smaller than Part headers, but still their own moment */
+.end-of-everything h3 {
+  font-weight: normal;
+  font-style: italic;
+  font-size: 1.3rem;
+  letter-spacing: 0.03em;
+  color: var(--star);
+  margin: 34px 0 12px;
+  padding-left: 14px;
+  border-left: 2px solid var(--rule);
+}
+
+.end-of-everything p {
+  font-size: 1.2rem;
+  line-height: 1.95;
+  margin: 0 0 22px;
+}
+
+/* drop cap on the essay's actual opening line, right after the first subheading —
+   not just "the first <p> in the page," which would grab the back link instead */
+.end-of-everything h3:first-of-type + p::first-letter {
+  font-size: 3.2em;
+  float: left;
+  line-height: 0.8;
+  padding: 4px 8px 0 0;
+  color: var(--ember);
+}
+
+.end-of-everything p em {
+  color: var(--star);
+  font-style: italic;
+}
+
+/* links inside the essay body and the further-reading list only */
+.end-of-everything p em ~ a,
+.end-of-everything p a,
+.end-of-everything li a {
+  color: var(--star);
+  border-bottom: 1px solid rgba(159, 178, 224, 0.4);
+  text-decoration: none;
+}
+.end-of-everything p a:hover,
+.end-of-everything li a:hover {
+  border-bottom-color: var(--star);
+}
+
+.end-of-everything h3 + ul {
+  list-style: none;
+  padding: 0;
+}
+.end-of-everything h3 + ul li {
+  color: var(--ink-dim);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.8;
+}
+.end-of-everything h3 + ul li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--ember);
+}
+
+@media (max-width: 480px) {
+  .end-of-everything {
+    padding: 20px 16px 60px;
+  }
+  .end-of-everything h3:first-of-type + p::first-letter {
+    font-size: 2.6em;
+  }
+}
