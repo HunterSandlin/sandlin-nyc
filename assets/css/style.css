@@ -209,6 +209,22 @@ a.stub:hover {
     grid-template-columns: 1fr;
     gap: 8px;
   }
+  .lb-image-wrap {
+    position: relative;
+  }
+  .lb-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    opacity: 0.85;
+  }
+  .lb-prev {
+    left: 8px;
+  }
+  .lb-next {
+    right: 8px;
+  }
 }
 
 /* photo lightbox overlay */
