@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SandlinNYC &mdash; Music</title>
+    <meta name="description" content="Music Hunter likes" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <body>
+    <div class="center">
+      <h1 class="logo">sandlin.nyc</h1>
+    </div>
+
+    <div class="back-nav">
+      <a class="back-link" href="/"
+        ><span class="arrow">&larr;</span>Back to homepage</a
+      >
+    </div>
+
+    <h2 class="center">Music</h2>
+    <p class="big center">Hunter's music canon.</p>
+
+    <div class="gold-divider"></div>
+
+    <div id="artistList"></div>
+
+    <h2 class="center">All the albums</h2>
+    <p class="big center">Newest additions first.</p>
+
+    <div class="album-grid" id="albumGrid"></div>
+
+    <div class="foot">sandlin.nyc &middot; email me @ hunter@sandlin.nyc</div>
+
+    <div class="lightbox" id="lightbox">
+      <div class="lightbox-content">
+        <button class="lb-close" id="lbClose" aria-label="Close">
+          &times;
+        </button>
+        <img class="lb-image album-modal-cover" id="albumCover" src="" alt="" />
+        <h3 class="book-title" id="albumTitle"></h3>
+        <p class="book-meta" id="albumMeta"></p>
+        <div class="book-review" id="albumReview"></div>
+      </div>
+    </div>
+
+    <script src="/assets/js/music.js"></script>
+  </body>
+</html>

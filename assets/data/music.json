@@ -1,0 +1,88 @@
+{
+  "artists": [
+    {
+      "name": "localnewslegend",
+      "intro": "<p>TODO: talk about localnewslegend.</p>"
+    },
+    {
+      "name": "Jeffrey Lewis",
+      "intro": "<p>TODO: talk about Jeffrey Lewis.</p>"
+    },
+    {
+      "name": "Paul Baribeau",
+      "intro": "<p>TODO: talk about Paul Baribeau.</p>"
+    }
+  ],
+  "albums": [
+    {
+      "title": "Unbearable",
+      "artist": "Paul Baribeau",
+      "year": "",
+      "cover": "/assets/img/albums/paul_baribeau/unbearable.jpg",
+      "review": "TODO: write about Unbearable. HTML like <br><br> works in here, same as books.json."
+    },
+    {
+      "title": "Paul Baribeau",
+      "artist": "Paul Baribeau",
+      "year": "",
+      "cover": "/assets/img/albums/paul_baribeau/paul_baribeau.jpg",
+      "review": "TODO: write about Paul Baribeau."
+    },
+    {
+      "title": "Grande Ledge",
+      "artist": "Paul Baribeau",
+      "year": "",
+      "cover": "/assets/img/albums/paul_baribeau/grand_ledge.jpg",
+      "review": "TODO: write about Grande Ledge."
+    },
+    {
+      "title": "'Em Are I",
+      "artist": "Jeffrey Lewis",
+      "year": "",
+      "cover": "/assets/img/albums/jeffery_lewis/em_are_i.jpg",
+      "review": "TODO: write about 'Em Are I."
+    },
+    {
+      "title": "It's the Ones Who've Cracked That the Light Shines Through",
+      "artist": "Jeffrey Lewis",
+      "year": "",
+      "cover": "/assets/img/albums/jeffery_lewis/its_the_ones_whove_cracked.jpg",
+      "review": "TODO: write about It's the Ones Who've Cracked That the Light Shines Through."
+    },
+    {
+      "title": "The Last Time I Did Acid I Went Insane",
+      "artist": "Jeffrey Lewis",
+      "year": "",
+      "cover": "/assets/img/albums/jeffery_lewis/the_last_time_i_did_acid.jpg",
+      "review": "TODO: write about The Last Time I Did Acid I Went Insane."
+    },
+    {
+      "title": "Songs for John Darnielle",
+      "artist": "localnewslegend",
+      "year": "",
+      "cover": "/assets/img/albums/LocalNewsLegend/songs_for_john_darnielle.jpg",
+      "review": "TODO: write about Songs for John Darnielle."
+    },
+    {
+      "title": "I Don't Know What You Were Expecting",
+      "artist": "localnewslegend",
+      "year": "",
+      "cover": "/assets/img/albums/LocalNewsLegend/i_dont_know_what_you_were_expecting.jpg",
+      "review": "TODO: write about I Don't Know What You Were Expecting."
+    },
+    {
+      "title": "Criterion of Embarrassment",
+      "artist": "localnewslegend",
+      "year": "",
+      "cover": "/assets/img/albums/LocalNewsLegend/criterion_of_embarassment.jpg",
+      "review": "TODO: write about Criterion of Embarrassment."
+    },
+    {
+      "title": "localnewslegend",
+      "artist": "localnewslegend",
+      "year": "",
+      "cover": "/assets/img/albums/LocalNewsLegend/localnewslegend.jpg",
+      "review": "TODO: write about the self-titled album."
+    }
+  ]
+}
