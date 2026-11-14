@@ -1,12 +1,37 @@
-const grid = document.getElementById("bookGrid");
+const list = document.getElementById("bookList");
 const lightbox = document.getElementById("lightbox");
 const lbClose = document.getElementById("lbClose");
 const bookTitle = document.getElementById("bookTitle");
 const bookMeta = document.getElementById("bookMeta");
 const bookReview = document.getElementById("bookReview");
 
+const MONTHS = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+function ordinal(n) {
+  const v = n % 100;
+  if (v >= 11 && v <= 13) return n + "th";
+  return n + (["th", "st", "nd", "rd"][n % 10] || "th");
+}
+
+function formatDate(iso) {
+  const [y, m, d] = iso.split("-").map(Number);
+  return `${MONTHS[m - 1]} ${ordinal(d)}, ${y}`;
+}
+
 function stars(rating) {
-  if (!rating) return "";
   const full = Math.round(rating);
   return "&#9733;".repeat(full) + "&#9734;".repeat(5 - full);
 }
@@ -17,24 +42,35 @@ function previewText(html) {
   return div.textContent || div.innerText || "";
 }
 
-function renderGrid(books) {
+function renderList(books) {
   books.forEach((book) => {
-    const card = document.createElement("div");
-    card.className = "book-card";
-    card.innerHTML = `
+    const entry = document.createElement("div");
+    entry.className = book.highlightedArticle
+      ? "book-entry highlighted"
+      : "book-entry";
+
+    const details = [];
+    if (book.rating) {
+      details.push(`<span class="stars">${stars(book.rating)}</span>`);
+    }
+    if (book.dateRead) {
+      details.push(`Read ${formatDate(book.dateRead)}`);
+    }
+
+    entry.innerHTML = `
       <h3>${book.title}</h3>
-      <p class="author">${book.author}</p>
-      <p class="stars">${stars(book.rating)}</p>
+      <span class="author">&mdash; ${book.author}</span>
+      ${details.length ? `<p class="details">${details.join(" &middot; ")}</p>` : ""}
       <p class="preview">${previewText(book.review)}</p>
     `;
-    card.addEventListener("click", () => openBook(book));
-    grid.appendChild(card);
+    entry.addEventListener("click", () => openBook(book));
+    list.appendChild(entry);
   });
 }
 
 function openBook(book) {
   bookTitle.textContent = book.title;
-  bookMeta.textContent = `${book.author}${book.dateRead ? " \u2014 read " + book.dateRead : ""}`;
+  bookMeta.textContent = `${book.author}${book.dateRead ? " \u2014 read " + formatDate(book.dateRead) : ""}`;
   bookReview.innerHTML = book.review;
   lightbox.classList.add("open");
   document.body.style.overflow = "hidden";
@@ -57,4 +93,4 @@ document.addEventListener("keydown", (e) => {
 
 fetch("/assets/data/books.json")
   .then((res) => res.json())
-  .then(renderGrid);
+  .then(renderList);
